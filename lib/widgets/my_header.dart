@@ -1,3 +1,4 @@
+import 'package:covid_19/screens/info_screen.dart';
 import 'package:covid_19/widgets/my_clipper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -26,6 +27,7 @@ class _MyHeaderState extends State<MyHeader> {
     return ClipPath(
       clipper: MyClipper(),
       child: Container(
+        padding: const EdgeInsets.only(left: 40, top: 50, right: 20),
         height: 350,
         width: double.infinity,
         decoration: const BoxDecoration(
@@ -45,7 +47,16 @@ class _MyHeaderState extends State<MyHeader> {
           crossAxisAlignment: CrossAxisAlignment.end,
           children: <Widget>[
             GestureDetector(
-              onTap: () {},
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) {
+                      return const InfoScreen();
+                    },
+                  ),
+                );
+              },
               child: SvgPicture.asset('assets/icons/menu.svg'),
             ),
           ],
