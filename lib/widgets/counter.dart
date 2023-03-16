@@ -1,3 +1,4 @@
+import 'package:covid_19/constants.dart';
 import 'package:flutter/material.dart';
 
 class Counter extends StatelessWidget {
@@ -14,6 +15,37 @@ class Counter extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Column(
+      children: <Widget>[
+        Container(
+          padding: const EdgeInsets.all(6),
+          height: 25,
+          width: 25,
+          decoration: BoxDecoration(
+            shape: BoxShape.circle,
+            color: color.withOpacity(.26),
+          ),
+          child: Container(
+            decoration: BoxDecoration(
+              shape: BoxShape.circle,
+              color: Colors.transparent,
+              border: Border.all(
+                color: color,
+                width: 2,
+              ),
+            ),
+          ),
+        ),
+        const SizedBox(height: 10),
+        Text(
+          '$number',
+          style: TextStyle(
+            fontSize: 40,
+            color: color,
+          ),
+        ),
+        Text(title, style: kSubTextStyle),
+      ],
+    );
   }
 }
