@@ -1,5 +1,6 @@
 import 'package:covid_19/constants.dart';
 import 'package:covid_19/widgets/my_header.dart';
+import 'package:covid_19/widgets/prevent_card.dart';
 import 'package:covid_19/widgets/symptom_card.dart';
 import 'package:flutter/material.dart';
 
@@ -38,6 +39,7 @@ class _InfoScreenState extends State<InfoScreen> {
       body: SingleChildScrollView(
         controller: controller,
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             MyHeader(
               image: 'assets/icons/coronadr.svg',
@@ -48,6 +50,7 @@ class _InfoScreenState extends State<InfoScreen> {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
               child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
                   const Text(
                     'Symptoms',
@@ -58,15 +61,34 @@ class _InfoScreenState extends State<InfoScreen> {
                     scrollDirection: Axis.horizontal,
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: <Widget>[
+                      children: const <Widget>[
                         SymptomCard(
                           image: 'assets/images/headache.png',
                           title: 'Headache',
                           isActive: true,
                         ),
+                        SizedBox(width: 15),
+                        SymptomCard(
+                          image: 'assets/images/caugh.png',
+                          title: 'Cough',
+                        ),
+                        SizedBox(width: 15),
+                        SymptomCard(
+                          image: 'assets/images/fever.png',
+                          title: 'Fever',
+                        ),
                       ],
                     ),
-                  )
+                  ),
+                  const SizedBox(height: 20),
+                  const Text('Prevention', style: kTitleTextStyle),
+                  const SizedBox(height: 20),
+                  const PreventCard(
+                    text:
+                        'Since the start of the coronavirus outbreak some places have fully embraced wearing facemasks',
+                    image: 'assets/images/wear_mask.png',
+                    title: 'Wear face mask',
+                  ),
                 ],
               ),
             ),
