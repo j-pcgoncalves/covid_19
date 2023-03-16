@@ -1,4 +1,5 @@
 import 'package:covid_19/constants.dart';
+import 'package:covid_19/widgets/my_header.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -56,6 +57,20 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold(
+      body: SingleChildScrollView(
+        controller: controller,
+        child: Column(
+          children: <Widget>[
+            MyHeader(
+              image: 'assets/icons/Drcorona.svg',
+              textTop: 'All you need',
+              textBottom: 'is stay at home.',
+              offset: offset,
+            ),
+          ],
+        ),
+      ),
+    );
   }
 }
