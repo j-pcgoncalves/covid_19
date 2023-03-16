@@ -164,6 +164,16 @@ class _HomeScreenState extends State<HomeScreen> {
                           number: 1046,
                           title: 'Infected',
                         ),
+                        Counter(
+                          color: kDeathColor,
+                          number: 87,
+                          title: 'Deaths',
+                        ),
+                        Counter(
+                          color: kRecoveryColor,
+                          number: 46,
+                          title: 'Recovered',
+                        ),
                       ],
                     ),
                   ),
