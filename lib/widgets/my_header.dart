@@ -59,6 +59,22 @@ class _MyHeaderState extends State<MyHeader> {
               },
               child: SvgPicture.asset('assets/icons/menu.svg'),
             ),
+            const SizedBox(height: 20),
+            Expanded(
+              child: Stack(
+                children: <Widget>[
+                  Positioned(
+                    top: (widget.offset < 0) ? 0 : widget.offset,
+                    child: SvgPicture.asset(
+                      widget.image,
+                      width: 230,
+                      fit: BoxFit.fitWidth,
+                      alignment: Alignment.topCenter,
+                    ),
+                  ),
+                ],
+              ),
+            ),
           ],
         ),
       ),
