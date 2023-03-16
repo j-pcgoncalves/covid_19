@@ -1,3 +1,4 @@
+import 'package:covid_19/constants.dart';
 import 'package:covid_19/screens/info_screen.dart';
 import 'package:covid_19/widgets/my_clipper.dart';
 import 'package:flutter/material.dart';
@@ -72,6 +73,17 @@ class _MyHeaderState extends State<MyHeader> {
                       alignment: Alignment.topCenter,
                     ),
                   ),
+                  Positioned(
+                    top: 20 - widget.offset / 2,
+                    left: 150,
+                    child: Text(
+                      '${widget.textTop} \n${widget.textBottom}',
+                      style: kHeadingTextStyle.copyWith(
+                        color: Colors.white,
+                      ),
+                    ),
+                  ),
+                  Container(),
                 ],
               ),
             ),
